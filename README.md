@@ -19,3 +19,14 @@
 - 📧
 - 📂
 - 🎮
+
+## Keyboard shortcuts
+Shortcuts I frequently use:
+- Command-x (cut and copy)
+- Command-v (paste)
+- Command-z (undo)
+
+Shortcuts I would like to start using:
+- Command-D (duplicate)
+- Command-N (open new find window)
+- Command-delete (move the selected item to the trash)
