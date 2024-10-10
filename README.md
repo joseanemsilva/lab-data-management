@@ -33,4 +33,4 @@ Shortcuts I would like to start using:
 
 
 ## Command Line 
-* [ClI Commands File] (docs/cli.md)
+* [CLI Commands File] (docs/cli.md)
