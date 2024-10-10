@@ -30,3 +30,7 @@ Shortcuts I would like to start using:
 - Command-D (duplicate)
 - Command-N (open new find window)
 - Command-delete (move the selected item to the trash)
+
+
+## Command Line 
+* [ClI Commands File] (docs/cli.md)
