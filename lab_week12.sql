@@ -1,24 +1,40 @@
--- TABLE
-CREATE TABLE assignments (  
-    id INTEGER PRIMARY KEY AUTOINCREMENT,  -- Unique ID for each assignment  
-    course_id TEXT NOT NULL,  -- Foreign key referencing courses  
-    title TEXT NOT NULL,
-    status TEXT NOT NULL,  -- Status of the assignment (e.g., "Not Started", "In Progress", "Completed") 
-    due_date TEXT,  -- Due date stored as a string (e.g., "YYYY-MM-DD")  
-    FOREIGN KEY (course_id) REFERENCES courses(course_id) ON DELETE CASCADE  
-);
-CREATE TABLE courses (  
-    course_id TEXT PRIMARY KEY,  -- String ID for courses, e.g., "COMP1234"  
-    semester TEXT NOT NULL,  -- Semester the course is offered (e.g., "2024-3" for Fall 2024)
-    course_name TEXT NOT NULL,
-    lab_time TEXT,  -- Time of the lab session (e.g., "Tue 10")
-    lecture_time TEXT,  -- Time of the lecture session (e.g., "Mon 13")
-    notes TEXT  
-);
- 
--- INDEX
- 
--- TRIGGER
- 
--- VIEW
- 
+-- Concatenate
+select concat(course_name,' - ', semester)
+from courses;
+
+-- Finding specific data 
+SELECT course_id, course_name, lab_time
+from courses
+where lab_time LIKE 'Fri%';
+
+--Upcoming Assignments
+SELECT *
+from assignments
+where due_date > '2024-11-21';
+
+-- Count data by status
+SELECT status as prefix, count(*)
+from assignments
+GROUP by prefix;
+
+-- Select the longest name
+select course_name
+from courses
+order by length(course_name) DESC
+limit 1;
+
+-- Display in uppercase 
+SELECT upper(course_name)
+from courses;
+
+-- Select specific due-date month
+SELECT title 
+from assignments
+where due_date LIKE '%-09-%';
+
+-- Select missed information
+SELECT *
+from assignments
+WHERE due_date is NULL;
+
+
